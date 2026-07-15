@@ -1,1 +1,721 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nursultan & Danel — Той шақыруы</title>
+  <meta name="description" content="Нұрсұлтан мен Данельдің тойына шақыру. 27 тамыз 2026, Талдықорған қаласы, AQPEIL мейрамханасы.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    /* ===== BASE ===== */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #F5F0E7;
+      color: #3A3A38;
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-weight: 400;
+      line-height: 1.6;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ===== LAYOUT WRAPPER ===== */
+    .wrapper {
+      width: 100%;
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== DIVIDER ===== */
+    .divider {
+      border: none;
+      border-top: 1px solid #CFC7B8;
+      margin: 36px 0;
+    }
+
+    /* ===== PHOTOS ===== */
+    .photo-block img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .photo-portrait img {
+      aspect-ratio: 3 / 4;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      padding-top: 40px;
+      padding-bottom: 32px;
+    }
+
+    .header-title {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: clamp(26px, 7vw, 36px);
+      font-weight: 300;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      line-height: 1.3;
+      margin-bottom: 28px;
+    }
+
+    /* ===== INVITATION TEXT BLOCK ===== */
+    .invitation {
+      padding: 8px 0;
+    }
+
+    .invitation .heading-kurmetti {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: clamp(24px, 6vw, 32px);
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .invitation .body-text {
+      font-size: clamp(15px, 4vw, 18px);
+      font-weight: 400;
+      line-height: 1.7;
+      margin-bottom: 24px;
+      padding: 0 8px;
+    }
+
+    .invitation .line-sizderdi {
+      font-size: clamp(15px, 4vw, 18px);
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+
+    .invitation .name-large {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: clamp(26px, 7vw, 36px);
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .invitation .line-men {
+      font-size: clamp(15px, 4vw, 18px);
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+
+    .invitation .closing-text {
+      font-size: clamp(14px, 3.8vw, 17px);
+      font-weight: 400;
+      line-height: 1.7;
+      margin-top: 20px;
+      padding: 0 16px;
+    }
+
+    /* ===== DATE BLOCK ===== */
+    .date-block {
+      padding: 8px 0;
+    }
+
+    .date-block .month {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: clamp(26px, 7vw, 36px);
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .date-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .date-box {
+      border: 1px solid #3A3A38;
+      border-radius: 20px;
+      padding: 6px 20px;
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: clamp(13px, 3.2vw, 15px);
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+
+    .date-day {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: clamp(40px, 10vw, 56px);
+      font-weight: 300;
+      line-height: 1;
+    }
+
+    .date-block .time {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: clamp(24px, 6vw, 32px);
+      font-weight: 400;
+      letter-spacing: 2px;
+    }
+
+    /* ===== ADDRESS BLOCK ===== */
+    .address-block {
+      padding: 8px 0;
+    }
+
+    .address-block .address-line {
+      font-size: clamp(14px, 3.8vw, 17px);
+      font-weight: 400;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .address-block .venue-name {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: clamp(26px, 7vw, 36px);
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .address-block .venue-caption {
+      font-size: clamp(14px, 3.8vw, 17px);
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+
+    .btn-map {
+      display: inline-block;
+      background-color: #54544D;
+      color: #F5F0E7;
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: clamp(15px, 4vw, 18px);
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      padding: 12px 36px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn-map:hover {
+      opacity: 0.85;
+    }
+
+    /* ===== SPACER ===== */
+    .spacer {
+      height: 48px;
+    }
+
+    /* ===== HOSTS BLOCK ===== */
+    .hosts-block {
+      padding-bottom: 28px;
+    }
+
+    .hosts-block .hosts-label {
+      font-size: clamp(14px, 3.8vw, 17px);
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 6px;
+    }
+
+    .hosts-block .hosts-name {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: clamp(20px, 5.5vw, 28px);
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+
+    /* ===== FOOTER PHOTO ===== */
+    .footer-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== RSVP BLOCK ===== */
+    .rsvp-block {
+      padding: 48px 0 56px;
+    }
+
+    .rsvp-title {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: clamp(36px, 9vw, 52px);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    .rsvp-subtitle {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: clamp(13px, 3.2vw, 15px);
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      padding: 0 8px;
+    }
+
+    .rsvp-form {
+      text-align: left;
+      max-width: 100%;
+    }
+
+    .rsvp-field-group {
+      margin-bottom: 32px;
+    }
+
+    .rsvp-label {
+      display: block;
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: clamp(13px, 3.2vw, 15px);
+      font-weight: 400;
+      color: #8A8A84;
+      margin-bottom: 8px;
+    }
+
+    .rsvp-input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #3A3A38;
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: clamp(16px, 4.2vw, 19px);
+      font-weight: 400;
+      color: #3A3A38;
+      padding: 8px 0;
+      outline: none;
+      border-radius: 0;
+      -webkit-appearance: none;
+    }
+
+    .rsvp-input::placeholder {
+      color: #B5B0A6;
+    }
+
+    .rsvp-input:focus {
+      border-bottom-color: #54544D;
+    }
+
+    .rsvp-question {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: clamp(17px, 4.5vw, 21px);
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+
+    .rsvp-radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .rsvp-radio-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: clamp(15px, 4vw, 18px);
+      font-weight: 400;
+      color: #3A3A38;
+      line-height: 1.4;
+    }
+
+    .rsvp-radio-label input[type="radio"] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      border: 1.5px solid #3A3A38;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      position: relative;
+      margin: 0;
+    }
+
+    .rsvp-radio-label input[type="radio"]:checked::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      background-color: #3A3A38;
+      border-radius: 50%;
+    }
+
+    .stepper-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-top: 12px;
+    }
+
+    .stepper-btn {
+      width: 48px;
+      height: 48px;
+      background: transparent;
+      border: 1.5px solid #3A3A38;
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: 24px;
+      font-weight: 300;
+      color: #3A3A38;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.15s ease;
+      line-height: 1;
+      padding: 0;
+    }
+
+    .stepper-btn:hover {
+      background-color: rgba(58, 58, 56, 0.06);
+    }
+
+    .stepper-btn:active {
+      background-color: rgba(58, 58, 56, 0.12);
+    }
+
+    .stepper-value {
+      width: 56px;
+      text-align: center;
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: clamp(18px, 4.5vw, 22px);
+      font-weight: 400;
+      color: #3A3A38;
+      border-top: 1.5px solid #3A3A38;
+      border-bottom: 1.5px solid #3A3A38;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-submit {
+      display: block;
+      width: 100%;
+      background-color: #1A1A1A;
+      color: #F5F0E7;
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: clamp(14px, 3.5vw, 16px);
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      padding: 18px 24px;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      margin-top: 40px;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn-submit:hover {
+      opacity: 0.88;
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    .rsvp-thanks {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: clamp(15px, 4vw, 18px);
+      font-weight: 400;
+      font-style: italic;
+      color: #54544D;
+      margin-top: 20px;
+      text-align: center;
+      display: none;
+    }
+
+    .rsvp-thanks.show {
+      display: block;
+    }
+
+    .rsvp-error {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      font-size: clamp(13px, 3.2vw, 15px);
+      font-weight: 400;
+      color: #9E5A5A;
+      margin-top: 12px;
+      text-align: center;
+      display: none;
+    }
+
+    .rsvp-error.show {
+      display: block;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (min-width: 700px) {
+      .wrapper {
+        padding: 0 32px;
+      }
+
+      .header {
+        padding-top: 56px;
+      }
+
+      .divider {
+        margin: 40px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <!-- ===== HEADER ===== -->
+    <section class="header reveal" id="header">
+      <h1 class="header-title">Nursultan &amp; Danel</h1>
+      <div class="photo-block photo-portrait">
+        <img src="photo1.jpg" alt="Nursultan & Danel" width="600" height="800">
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ===== INVITATION ===== -->
+    <section class="invitation reveal" id="invitation">
+      <h2 class="heading-kurmetti">Құрметті</h2>
+      <p class="body-text">
+        Ағайын-туыс, бауырлар, құда-жекжат, нағашы-жиен,<br>
+        бөлелер, дос-жаран, көршілер мен әріптестер!
+      </p>
+      <p class="line-sizderdi">Сіз(дер)ді</p>
+      <p class="name-large">Нұрсұлтан</p>
+      <p class="line-men">мен</p>
+      <p class="name-large">Данельдің</p>
+      <p class="closing-text">
+        Тойларына арналған салтанатты ақ<br>
+        дастарханымыздың қадірлі қонағы болуға<br>
+        шақырамыз!
+      </p>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ===== PHOTO 2 ===== -->
+    <div class="photo-block photo-portrait reveal">
+      <img src="photo2.jpg" alt="Nursultan & Danel" width="600" height="800">
+    </div>
+
+    <hr class="divider">
+
+    <!-- ===== DATE & TIME ===== -->
+    <section class="date-block reveal" id="date">
+      <p class="month">Тамыз</p>
+      <div class="date-row">
+        <span class="date-box">Бейсенбі</span>
+        <span class="date-day">27</span>
+        <span class="date-box">2026</span>
+      </div>
+      <p class="time">17:00</p>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ===== ADDRESS ===== -->
+    <section class="address-block reveal" id="address">
+      <p class="address-line">Талдықорған қаласы, И. Жансүгірова 5Б к-сі</p>
+      <p class="venue-name">AQPEIL</p>
+      <p class="venue-caption">мейрамханасы</p>
+      <a href="#" class="btn-map" id="btn-map" target="_blank" rel="noopener noreferrer">Карта</a>
+    </section>
+
+    <!-- ===== SPACER ===== -->
+    <div class="spacer"></div>
+
+    <!-- ===== HOSTS ===== -->
+    <section class="hosts-block reveal" id="hosts">
+      <p class="hosts-label">Құрметті той иелері</p>
+      <p class="hosts-name">Бекет &amp; Рината</p>
+    </section>
+
+    <!-- ===== PHOTO 3 (FOOTER) ===== -->
+    <div class="photo-block footer-photo reveal">
+      <img src="photo3.jpg" alt="Nursultan & Danel" width="600" height="800">
+    </div>
+
+    <hr class="divider">
+
+    <!-- ===== RSVP / SURVEY ===== -->
+    <section class="rsvp-block reveal" id="rsvp">
+      <h2 class="rsvp-title">Сауалнама</h2>
+      <p class="rsvp-subtitle">
+        Сіздің жауабыңыз тойды<br>
+        ұйымдастыруға көмегін тигізеді,<br>
+        алдын ала рахмет
+      </p>
+
+      <form class="rsvp-form" id="rsvp-form" autocomplete="off">
+        <!-- Name -->
+        <div class="rsvp-field-group">
+          <label class="rsvp-label" for="rsvp-name">Есіміңіз</label>
+          <input class="rsvp-input" type="text" id="rsvp-name" name="name" placeholder="" autocomplete="off">
+        </div>
+
+        <!-- RSVP -->
+        <div class="rsvp-field-group">
+          <p class="rsvp-question">Тойға келе аласыз ба?</p>
+          <div class="rsvp-radio-group">
+            <label class="rsvp-radio-label">
+              <input type="radio" name="rsvp" value="yes">
+              Келемін
+            </label>
+            <label class="rsvp-radio-label">
+              <input type="radio" name="rsvp" value="couple">
+              Жұбыймен келемін
+            </label>
+            <label class="rsvp-radio-label">
+              <input type="radio" name="rsvp" value="no">
+              Өкінішке орай, қатыса алмаймын
+            </label>
+          </div>
+        </div>
+
+        <!-- Guest count -->
+        <div class="rsvp-field-group">
+          <p class="rsvp-question">Қонақтар саны?</p>
+          <div class="stepper-wrap">
+            <button type="button" class="stepper-btn" id="stepper-minus" aria-label="Minus">−</button>
+            <span class="stepper-value" id="stepper-value">1</span>
+            <button type="button" class="stepper-btn" id="stepper-plus" aria-label="Plus">+</button>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn-submit" id="btn-submit">Жіберу</button>
+        <p class="rsvp-error" id="rsvp-error">Есіміңізді жазып, жауапты таңдаңыз</p>
+        <p class="rsvp-thanks" id="rsvp-thanks">Рахмет! Жауабыңыз қабылданды</p>
+      </form>
+    </section>
+
+  </div>
+
+  <script>
+    // Placeholder map URL — replace with your 2GIS or Google Maps link
+    const MAP_URL = 'https://2gis.kz/almaty/geo/70000001101735389/78.413457,45.017123';
+
+    document.getElementById('btn-map').addEventListener('click', function (e) {
+      if (this.getAttribute('href') === '#') {
+        e.preventDefault();
+        window.open(MAP_URL, '_blank', 'noopener,noreferrer');
+      }
+    });
+
+    // ===== SCROLL REVEAL via IntersectionObserver =====
+    (function () {
+      const reveals = document.querySelectorAll('.reveal');
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15
+      });
+
+      reveals.forEach(function (el) {
+        observer.observe(el);
+      });
+    })();
+
+    // ===== RSVP FORM LOGIC =====
+    (function () {
+      var guestCount = 1;
+      var valueEl = document.getElementById('stepper-value');
+      var submitted = false;
+
+      // Stepper
+      document.getElementById('stepper-minus').addEventListener('click', function () {
+        if (guestCount > 1) {
+          guestCount--;
+          valueEl.textContent = guestCount;
+        }
+      });
+
+      document.getElementById('stepper-plus').addEventListener('click', function () {
+        guestCount++;
+        valueEl.textContent = guestCount;
+      });
+
+      // Form submit
+      document.getElementById('rsvp-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (submitted) return;
+
+        var nameVal = document.getElementById('rsvp-name').value.trim();
+        var rsvpVal = document.querySelector('input[name="rsvp"]:checked');
+        var errorEl = document.getElementById('rsvp-error');
+        var thanksEl = document.getElementById('rsvp-thanks');
+
+        errorEl.classList.remove('show');
+
+        if (!nameVal || !rsvpVal) {
+          errorEl.classList.add('show');
+          return;
+        }
+
+        submitted = true;
+        document.getElementById('btn-submit').disabled = true;
+        thanksEl.classList.add('show');
+      });
+    })();
+  </script>
+
+</body>
+</html>
