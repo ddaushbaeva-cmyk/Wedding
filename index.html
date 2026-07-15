@@ -643,6 +643,13 @@
 
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("ktx64JFiF-R0_2H-g");
+    })();
+  </script>
+
   <script>
     // Placeholder map URL — replace with your 2GIS or Google Maps link
     const MAP_URL = 'https://2gis.kz/almaty/geo/70000001101735389/78.413457,45.017123';
@@ -702,17 +709,43 @@
         var rsvpVal = document.querySelector('input[name="rsvp"]:checked');
         var errorEl = document.getElementById('rsvp-error');
         var thanksEl = document.getElementById('rsvp-thanks');
+        var submitBtn = document.getElementById('btn-submit');
 
         errorEl.classList.remove('show');
+        thanksEl.classList.remove('show');
 
         if (!nameVal || !rsvpVal) {
           errorEl.classList.add('show');
           return;
         }
 
-        submitted = true;
-        document.getElementById('btn-submit').disabled = true;
-        thanksEl.classList.add('show');
+        // Disable button while sending
+        submitBtn.disabled = true;
+
+        // Build the message text
+        var rsvpLabels = {
+          'yes': 'Келемін',
+          'couple': 'Жұбыймен келемін',
+          'no': 'Өкінішке орай, қатыса алмаймын'
+        };
+        var rsvpText = rsvpLabels[rsvpVal.value] || rsvpVal.value;
+        var messageText = 'Жауабы: ' + rsvpText + '\nҚонақтар саны: ' + guestCount;
+
+        emailjs.send('service_gt4dqeh', 'template_sldewef', {
+          name: nameVal,
+          title: 'RSVP Response',
+          message: messageText,
+          time: new Date().toLocaleString('ru-RU'),
+          email: ''
+        }).then(function () {
+          submitted = true;
+          thanksEl.classList.add('show');
+        }, function (error) {
+          submitBtn.disabled = false;
+          errorEl.textContent = 'Қате орын алды, қайталап көріңіз';
+          errorEl.classList.add('show');
+          console.error('EmailJS error:', error);
+        });
       });
     })();
   </script>
